@@ -1,0 +1,1561 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #D4AF37;
+    --deep-gold: #B8860B;
+    --dark-green: #1A472A;
+    --cream: #FAF3E0;
+    --ivory: #FFFFF0;
+    --text-dark: #2C1810;
+    --border-gold: rgba(212, 175, 55, 0.3);
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+}
+
+.arabic-font {
+    font-family: 'Amiri', serif;
+}
+
+.script-font {
+    font-family: 'Dancing Script', cursive;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ========== ENHANCED HEADER / HERO SECTION ========== */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(rgba(26, 71, 42, 0.85), rgba(26, 71, 42, 0.9)),
+        url('https://images.unsplash.com/photo-1560421683-6856ea585c78?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    color: var(--ivory);
+    overflow: hidden;
+}
+
+/* Floral Decorative Border */
+.hero-border {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-border::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 10px;
+}
+
+/* Decorative Elements */
+.decorative-corner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+
+.corner-tl {
+    top: 40px;
+    left: 40px;
+    border-top: 3px solid var(--gold);
+    border-left: 3px solid var(--gold);
+}
+
+.corner-tr {
+    top: 40px;
+    right: 40px;
+    border-top: 3px solid var(--gold);
+    border-right: 3px solid var(--gold);
+}
+
+.corner-bl {
+    bottom: 40px;
+    left: 40px;
+    border-bottom: 3px solid var(--gold);
+    border-left: 3px solid var(--gold);
+}
+
+.corner-br {
+    bottom: 40px;
+    right: 40px;
+    border-bottom: 3px solid var(--gold);
+    border-right: 3px solid var(--gold);
+}
+
+.floating-icons {
+    position: absolute;
+    font-size: 1.5rem;
+    color: rgba(212, 175, 55, 0.5);
+    animation: float 6s ease-in-out infinite;
+}
+
+.icon-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.icon-2 {
+    top: 15%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.icon-3 {
+    bottom: 25%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.icon-4 {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+/* Main Content */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.bismillah {
+    font-size: 3.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-family: 'Amiri', serif;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1.5s ease;
+}
+
+.welcome-text {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    animation: fadeIn 2s ease;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--ivory);
+    animation: fadeInUp 1.8s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.main-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.couple-names {
+    font-size: 5.5rem;
+    color: var(--gold);
+    margin: 40px 0;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+    position: relative;
+    padding: 0 20px;
+    animation: fadeIn 2.5s ease;
+}
+
+.couple-names::before,
+.couple-names::after {
+    content: "✽";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    color: var(--ivory);
+    opacity: 0.8;
+}
+
+.couple-names::before {
+    left: -30px;
+}
+
+.couple-names::after {
+    right: -30px;
+}
+
+.invitation-text {
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    animation: fadeIn 3s ease;
+}
+
+.date-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+    animation: fadeIn 3.5s ease;
+}
+
+.date-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px 40px;
+    border: 1px solid var(--border-gold);
+    min-width: 280px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.date-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold), var(--dark-green));
+}
+
+.date-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.date-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.date-detail {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: var(--ivory);
+}
+
+.date-subdetail {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.venue {
+    margin-top: 50px;
+    font-size: 2rem;
+    padding: 20px 40px;
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+    animation: fadeIn 4s ease;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.venue i {
+    margin-right: 10px;
+    color: var(--gold);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* ========== REPLACEMENT SECTION (Choose One) ========== */
+
+/* Option 1: Blessings & Good Wishes Section */
+.blessings-section {
+    padding: 100px 20px;
+    background-color: var(--ivory);
+    position: relative;
+}
+
+.blessings-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.blessings-title {
+    font-size: 3.2rem;
+    margin-bottom: 50px;
+    color: var(--dark-green);
+    font-weight: 400;
+}
+
+.blessings-text {
+    font-size: 2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.blessing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.blessing-card {
+    background: var(--cream);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--gold);
+    transition: transform 0.3s ease;
+}
+
+.blessing-card:hover {
+    transform: translateY(-10px);
+}
+
+.blessing-icon {
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+}
+
+.blessing-content h4 {
+    font-size: 1.8rem;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+}
+
+.blessing-content p {
+    font-size: 1.5rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Option 2: Islamic Quotes Section */
+.quotes-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--ivory) 100%);
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quote-arabic {
+    font-size: 2.8rem;
+    color: var(--dark-green);
+    margin-bottom: 30px;
+    font-family: 'Amiri', serif;
+    line-height: 1.8;
+}
+
+.quote-translation {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.quote-reference {
+    font-size: 1.5rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Option 3: Prayer Cards Section */
+.prayer-cards-section {
+    padding: 100px 20px;
+    background-color: var(--ivory);
+}
+
+.prayer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.prayer-item {
+    background: var(--cream);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.prayer-item:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.prayer-item h3 {
+    font-size: 2.2rem;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+}
+
+.prayer-item p {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.prayer-arabic {
+    font-size: 2rem;
+    color: var(--dark-green);
+    margin: 20px 0;
+    font-family: 'Amiri', serif;
+}
+
+/* Common section styles */
+.section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 80px;
+    color: var(--dark-green);
+    position: relative;
+    font-weight: 400;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Quranic Verse Section */
+.quran-section {
+    padding: 100px 20px;
+    background: linear-gradient(rgba(26, 71, 42, 0.9), rgba(26, 71, 42, 0.95)),
+        url('https://images.unsplash.com/photo-1601612611385-2d8d8d3b6c6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    color: var(--ivory);
+    text-align: center;
+}
+
+.quran-verse-arabic {
+    font-size: 3.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    font-family: 'Amiri', serif;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.quran-translation {
+    font-size: 2rem;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.quran-reference {
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Countdown Section */
+.countdown-section {
+    padding: 100px 20px;
+    background-color: var(--ivory);
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.countdown-box {
+    
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--dark-green), #2E8B57);
+    color: var(--ivory);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    
+    border: 8px solid var(--cream);
+    transition: transform 0.3s ease;
+}
+
+.countdown-box:hover {
+    transform: scale(1.05);
+}
+
+.countdown-box::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid var(--border-gold);
+}
+
+.countdown-value {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+/* Prayer Request Section */
+.prayer-section {
+    padding: 100px 20px;
+    background-color: var(--cream);
+    text-align: center;
+}
+
+.prayer-title {
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+    color: var(--dark-green);
+    font-weight: 400;
+}
+
+.prayer-text {
+    font-size: 2.2rem;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    font-weight: 300;
+}
+
+.dua-arabic {
+    font-size: 2.8rem;
+    color: var(--dark-green);
+    margin: 60px 0 30px;
+    font-family: 'Amiri', serif;
+}
+
+.dua-translation {
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    font-style: italic;
+}
+
+.divider {
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 40px auto;
+}
+
+/* Footer */
+footer {
+    padding: 80px 20px 40px;
+    background-color: var(--dark-green);
+    color: var(--ivory);
+    text-align: center;
+}
+
+.family-names {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--gold);
+}
+
+.contact-info {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.final-message {
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.final-arabic {
+    font-size: 2.5rem;
+    margin-top: 60px;
+    font-family: 'Amiri', serif;
+    color: var(--gold);
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.3rem;
+    opacity: 0.8;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+/* Large Desktops (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Desktops (992px to 1199px) */
+@media (max-width: 1199px) {
+    .couple-names {
+        font-size: 4.8rem;
+    }
+    
+    .main-title {
+        font-size: 3.2rem;
+    }
+    
+    .bismillah {
+        font-size: 3.2rem;
+    }
+    
+    .quran-verse-arabic {
+        font-size: 2.8rem;
+    }
+}
+
+/* Tablets (768px to 991px) */
+@media (max-width: 991px) {
+    .hero-section {
+        background-attachment: scroll;
+    }
+    
+    .hero-border {
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .decorative-corner {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .corner-tl,
+    .corner-tr,
+    .corner-bl,
+    .corner-br {
+        top: 30px;
+        right: 30px;
+        left: 30px;
+        bottom: 30px;
+    }
+    
+    .couple-names {
+        font-size: 4.2rem;
+        margin: 30px 0;
+    }
+    
+    .couple-names::before,
+    .couple-names::after {
+        font-size: 2rem;
+        left: -20px;
+        right: -20px;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .invitation-text {
+        font-size: 1.6rem;
+    }
+    
+    .date-section {
+        gap: 40px;
+    }
+    
+    .date-card {
+        min-width: 250px;
+        padding: 25px 35px;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+        margin-bottom: 60px;
+    }
+    
+    .quran-verse-arabic {
+        font-size: 2.5rem;
+    }
+    
+    .quran-translation {
+        font-size: 1.8rem;
+    }
+    
+    .countdown-box {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .countdown-value {
+        font-size: 4rem;
+    }
+    
+    .floating-icons {
+        font-size: 1.2rem;
+    }
+}
+
+/* Small Tablets and Large Phones (576px to 767px) */
+@media (max-width: 767px) {
+    .hero-content {
+        padding: 30px 20px;
+    }
+    
+    .bismillah {
+        font-size: 2.8rem;
+    }
+    
+    .main-title {
+        font-size: 2.6rem;
+    }
+    
+    .main-title::after {
+        width: 150px;
+    }
+    
+    .couple-names {
+        font-size: 3.5rem;
+        padding: 0 15px;
+    }
+    
+    .couple-names::before,
+    .couple-names::after {
+        font-size: 1.8rem;
+        left: -15px;
+        right: -15px;
+    }
+    
+    .invitation-text {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .date-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .date-card {
+        width: 100%;
+        max-width: 350px;
+        min-width: unset;
+        padding: 20px 30px;
+    }
+    
+    .date-title {
+        font-size: 1.6rem;
+    }
+    
+    .date-detail {
+        font-size: 2rem;
+    }
+    
+    .venue {
+        font-size: 1.8rem;
+        padding: 15px 30px;
+        margin-top: 40px;
+    }
+    
+    .blessings-section,
+    .quotes-section,
+    .prayer-cards-section,
+    .quran-section,
+    .countdown-section,
+    .prayer-section {
+        padding: 80px 20px;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+        margin-bottom: 50px;
+    }
+    
+    .blessings-text,
+    .quran-translation,
+    .prayer-text {
+        font-size: 1.8rem;
+    }
+    
+    .quran-verse-arabic {
+        font-size: 2.2rem;
+        line-height: 1.6;
+    }
+    
+    .blessing-cards,
+    .prayer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .blessing-card,
+    .prayer-item {
+        padding: 25px;
+    }
+    
+    .countdown-container {
+        gap: 30px;
+    }
+    
+    .countdown-box {
+        width: 140px;
+        height: 140px;
+        border-width: 6px;
+    }
+    
+    .countdown-box::after {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .countdown-value {
+        font-size: 3.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 1.2rem;
+    }
+    
+    .prayer-title {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+    
+    .dua-arabic {
+        font-size: 2.2rem;
+        margin: 50px 0 25px;
+    }
+    
+    .dua-translation {
+        font-size: 1.6rem;
+    }
+    
+    .divider {
+        width: 150px;
+        margin: 30px auto;
+    }
+    
+    footer {
+        padding: 60px 20px 30px;
+    }
+    
+    .family-names {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .final-message {
+        font-size: 1.6rem;
+        margin-bottom: 40px;
+    }
+    
+    .final-arabic {
+        font-size: 2rem;
+        margin-top: 50px;
+    }
+    
+    .contact-info {
+        font-size: 1.4rem;
+        margin-bottom: 40px;
+    }
+    
+    .copyright {
+        font-size: 1.2rem;
+        margin-top: 40px;
+        padding-top: 20px;
+    }
+    
+    .floating-icons {
+        display: none;
+    }
+}
+
+/* Phones (480px to 575px) */
+@media (max-width: 575px) {
+    .hero-section {
+        padding: 30px 15px;
+        min-height: 95vh;
+    }
+    
+    .hero-content {
+        padding: 25px 15px;
+    }
+    
+    .bismillah {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .welcome-text {
+        font-size: 1.1rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .main-title {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+    
+    .main-title::after {
+        width: 120px;
+        bottom: -8px;
+    }
+    
+    .couple-names {
+        font-size: 3rem;
+        margin: 25px 0;
+        letter-spacing: 1px;
+    }
+    
+    .couple-names::before,
+    .couple-names::after {
+        display: none;
+    }
+    
+    .invitation-text {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+    
+    .date-card {
+        padding: 18px 25px;
+    }
+    
+    .date-title {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    
+    .date-detail {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .date-subdetail {
+        font-size: 1.3rem;
+    }
+    
+    .venue {
+        font-size: 1.6rem;
+        padding: 12px 25px;
+        margin-top: 30px;
+    }
+    
+    .blessings-section,
+    .quotes-section,
+    .prayer-cards-section,
+    .quran-section,
+    .countdown-section,
+    .prayer-section {
+        padding: 60px 15px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .section-title::after {
+        width: 120px;
+        bottom: -15px;
+    }
+    
+    .blessings-text,
+    .quran-translation,
+    .prayer-text {
+        font-size: 1.6rem;
+    }
+    
+    .quran-verse-arabic {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+    }
+    
+    .blessing-cards,
+    .prayer-grid {
+        gap: 20px;
+        margin-top: 40px;
+    }
+    
+    .blessing-card,
+    .prayer-item {
+        padding: 20px;
+    }
+    
+    .blessing-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .blessing-content h4 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+    
+    .blessing-content p {
+        font-size: 1.4rem;
+    }
+    
+    .countdown-container {
+        gap: 20px;
+    }
+    
+    .countdown-box {
+        width: 120px;
+        height: 120px;
+        border-width: 5px;
+    }
+    
+    .countdown-box::after {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .countdown-value {
+        font-size: 3rem;
+    }
+    
+    .countdown-label {
+        font-size: 1.1rem;
+    }
+    
+    .prayer-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    .dua-arabic {
+        font-size: 1.9rem;
+        margin: 40px 0 20px;
+    }
+    
+    .dua-translation {
+        font-size: 1.4rem;
+    }
+    
+    .divider {
+        width: 120px;
+        margin: 25px auto;
+    }
+    
+    footer {
+        padding: 50px 15px 25px;
+    }
+    
+    .family-names {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    
+    .final-message {
+        font-size: 1.5rem;
+        margin-bottom: 35px;
+    }
+    
+    .final-arabic {
+        font-size: 1.8rem;
+        margin-top: 40px;
+    }
+    
+    .contact-info {
+        font-size: 1.3rem;
+        margin-bottom: 35px;
+        line-height: 1.6;
+    }
+    
+    .copyright {
+        font-size: 1.1rem;
+        margin-top: 35px;
+        padding-top: 15px;
+    }
+}
+
+/* Small Phones (320px to 479px) */
+@media (max-width: 479px) {
+    .hero-section {
+        padding: 20px 10px;
+    }
+    
+    .hero-content {
+        padding: 20px 10px;
+        border-radius: 10px;
+    }
+    
+    .hero-border {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 10px;
+    }
+    
+    .hero-border::before {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        border-radius: 8px;
+    }
+    
+    .decorative-corner {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .corner-tl,
+    .corner-tr,
+    .corner-bl,
+    .corner-br {
+        top: 20px;
+        right: 20px;
+        left: 20px;
+        bottom: 20px;
+    }
+    
+    .bismillah {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .welcome-text {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    .main-title {
+        font-size: 1.9rem;
+        letter-spacing: 1.5px;
+    }
+    
+    .main-title::after {
+        width: 100px;
+        height: 1.5px;
+        bottom: -6px;
+    }
+    
+    .couple-names {
+        font-size: 2.5rem;
+        margin: 20px 0;
+        padding: 0 10px;
+    }
+    
+    .invitation-text {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .date-section {
+        margin-top: 30px;
+        gap: 20px;
+    }
+    
+    .date-card {
+        padding: 15px 20px;
+        border-radius: 10px;
+    }
+    
+    .date-card::before {
+        height: 4px;
+    }
+    
+    .date-title {
+        font-size: 1.3rem;
+    }
+    
+    .date-detail {
+        font-size: 1.6rem;
+    }
+    
+    .date-subdetail {
+        font-size: 1.2rem;
+    }
+    
+    .venue {
+        font-size: 1.4rem;
+        padding: 10px 20px;
+        margin-top: 25px;
+        border-width: 1.5px;
+        border-radius: 8px;
+    }
+    
+    .blessings-section,
+    .quotes-section,
+    .prayer-cards-section,
+    .quran-section,
+    .countdown-section,
+    .prayer-section {
+        padding: 50px 10px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 35px;
+    }
+    
+    .section-title::after {
+        width: 100px;
+        bottom: -12px;
+    }
+    
+    .blessings-text,
+    .quran-translation,
+    .prayer-text {
+        font-size: 1.5rem;
+    }
+    
+    .quran-verse-arabic {
+        font-size: 1.7rem;
+        margin-bottom: 25px;
+    }
+    
+    .quran-reference {
+        font-size: 1.3rem;
+    }
+    
+    .countdown-container {
+        gap: 15px;
+    }
+    
+    .countdown-box {
+        width: 100px;
+        height: 100px;
+        border-width: 4px;
+    }
+    
+    .countdown-box::after {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .countdown-value {
+        font-size: 2.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 1rem;
+    }
+    
+    .prayer-title {
+        font-size: 2rem;
+        margin-bottom: 35px;
+    }
+    
+    .dua-arabic {
+        font-size: 1.7rem;
+        margin: 35px 0 18px;
+    }
+    
+    .dua-translation {
+        font-size: 1.3rem;
+    }
+    
+    .divider {
+        width: 100px;
+        margin: 20px auto;
+    }
+    
+    footer {
+        padding: 40px 10px 20px;
+    }
+    
+    .family-names {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    .final-message {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+    }
+    
+    .final-arabic {
+        font-size: 1.6rem;
+        margin-top: 30px;
+    }
+    
+    .contact-info {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .copyright {
+        font-size: 1rem;
+        margin-top: 30px;
+        padding-top: 15px;
+    }
+    
+    .copyright p {
+        margin-bottom: 8px;
+    }
+}
+
+/* Very Small Phones (under 320px) */
+@media (max-width: 319px) {
+    .hero-content {
+        padding: 15px 8px;
+    }
+    
+    .bismillah {
+        font-size: 2rem;
+    }
+    
+    .main-title {
+        font-size: 1.7rem;
+    }
+    
+    .couple-names {
+        font-size: 2.2rem;
+    }
+    
+    .invitation-text {
+        font-size: 1.2rem;
+    }
+    
+    .date-card {
+        padding: 12px 15px;
+    }
+    
+    .date-title {
+        font-size: 1.2rem;
+    }
+    
+    .date-detail {
+        font-size: 1.4rem;
+    }
+    
+    .date-subdetail {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .countdown-box {
+        width: 85px;
+        height: 85px;
+    }
+    
+    .countdown-value {
+        font-size: 2.2rem;
+    }
+}
+
+/* Landscape Orientation for Phones */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 120vh;
+        padding: 20px 15px;
+    }
+    
+    .hero-content {
+        padding: 20px 15px;
+    }
+    
+    .couple-names {
+        font-size: 2.8rem;
+        margin: 15px 0;
+    }
+    
+    .date-section {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .date-card {
+        min-width: 200px;
+        padding: 15px 20px;
+    }
+    
+    .countdown-container {
+        gap: 15px;
+    }
+    
+    .countdown-box {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .countdown-value {
+        font-size: 2.8rem;
+    }
+}
+
+/* Touch Device Optimization */
+@media (hover: none) and (pointer: coarse) {
+    .date-card:hover,
+    .blessing-card:hover,
+    .prayer-item:hover,
+    .countdown-box:hover {
+        transform: none;
+    }
+    
+    .date-card,
+    .blessing-card,
+    .prayer-item,
+    .countdown-box {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .floating-icons {
+        animation: none;
+    }
+    
+    .date-card,
+    .blessing-card,
+    .prayer-item,
+    .countdown-box {
+        transition: none;
+    }
+}
